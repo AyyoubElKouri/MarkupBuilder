@@ -17,13 +17,10 @@
  * @brief Represents a HashMap data structure
  * 
  * This structure defines a HashMap with a size and a pointer to the first node
- * 
- * @param size The current number of elements in the HashMap
- * @param head Pointer to the first node in the HashMap's linked list
  */
 struct HashMap {
-    int size;
-    struct Node *head;
+    int size;           ///< The current number of elements in the HashMap
+    struct Node *head;  ///< Pointer to the first node in the HashMap's linked list
 };
 
 
@@ -32,16 +29,12 @@ struct HashMap {
  * 
  * This structure defines a single node containing a key-value pair
  * and a pointer to the next node in the list
- * 
- * @param key A dynamically allocated string representing the node's key
- * @param value A dynamically allocated string representing the node's value
- * @param next Pointer to the next node in the linked list
  */
 struct Node
 {
-    char *key;
-    char *value;
-    struct Node *next;
+    char *key;          ///< A dynamically allocated string representing the node's key
+    char *value;        ///< A dynamically allocated string representing the node's value
+    struct Node *next;  ///< Pointer to the next node in the linked list
 };
 
 
