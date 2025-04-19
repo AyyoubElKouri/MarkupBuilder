@@ -1,0 +1,10 @@
+Testing TreeNew... Passed!
+Testing TreeAddChild... Passed!
+Testing TreeRemoveChild... Passed!
+Testing TreeGetNode... Passed!
+Testing TreeUpdateNode... Passed!
+Testing TreeDestroy... Passed!
+Testing TreeIsLeaf... Passed!
+Testing TreeGetParent... Passed!
+
+All tests passed successfully!

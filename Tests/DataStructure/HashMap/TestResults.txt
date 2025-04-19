@@ -1,0 +1,7 @@
+Creation/deletion test passed!
+Put/get test passed!
+Remove test passed!
+Contains test passed!
+Edge cases test passed!
+
+All tests passed successfully!
