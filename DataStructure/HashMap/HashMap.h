@@ -127,4 +127,16 @@ void HashMapFree(HashMap *map);
 void HashMapPrint(const HashMap *map);
 
 
+/**
+ * @brief Creates a deep copy of the HashMap
+ * 
+ * Allocates a new HashMap and copies all key-value pairs from the source HashMap.
+ * The returned HashMap is a completely independent copy of the original.
+ * 
+ * @param hashMap Pointer to the source HashMap to be copied
+ * @return A new HashMap with the same contents as the source, or NULL if copying fails
+ */
+HashMap *HashMapGetCopy(const HashMap *hashMap);
+
+
 #endif // HASHMAP_H

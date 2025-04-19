@@ -277,3 +277,26 @@ void HashMapPrint(const HashMap *map)
     }
     printf("-------------------------------------\n");
 }
+
+
+
+
+HashMap *HashMapGetCopy(const HashMap *hashMap)
+{
+    // Check the input parameters
+    if(!hashMap) return NULL;
+
+    // Create a new HashMap
+    HashMap *newHashMap = HashMapNew();
+    if(!newHashMap) return NULL;
+
+    // Traverse the linked list and copy the key-value pairs
+    struct Node *current = hashMap->head;
+    while(current)
+    {
+        HashMapPut(newHashMap, current->key, current->value);
+        current = current->next;
+    }
+
+    return newHashMap;
+}
