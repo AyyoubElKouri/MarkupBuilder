@@ -95,11 +95,13 @@ int TreeIsLeaf(const Tree *tree);
 
 
 /**
- * @brief Prints the contents of a tree to the console
- * 
- * @param tree The tree to be printed, must not be NULL
+ * @brief Prints a tree structure to the console in a visual format.
+ *
+ * @param tree    Pointer to the Tree node to print (must not be NULL).
+ * @param prefix  String used for indentation (use "" at the root level).
+ * @param isLast  Set to 1 if the node is the last child, 0 otherwise.
  */
-void TreePrint(const Tree *tree, int depth);
+void TreePrint(const Tree *tree, const char *prefix, int isLast);
 
 
 /**

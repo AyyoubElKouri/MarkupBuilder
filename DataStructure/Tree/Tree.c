@@ -256,24 +256,38 @@ int TreeIsLeaf(const Tree *tree)
 
 
 
-void TreePrint(const Tree *tree, int depth)
+void TreePrint(const Tree *tree, const char *prefix, int isLast)
 {
-    // Check the input parameter
-    if(!tree) return;
+    // Check The input parameter
+    if (!tree) return;
 
-    // Print the indentation
-    for(int index = 0 ; index < depth ; index++) printf("  ");
+    // Display a header when printing the root of the tree
+    if (strcmp(prefix, "") == 0) {
+        printf("\n\n\n-------------------------------------\n");
+        printf("The current state of the Tree is :\n");
+        printf("-------------------------------------\n");
+    }
 
-    // Print the tree structure
-    printf("%s\n", tree->id);
+    // Print the prefix and the tree structure line
+    printf("%s", prefix);
+    printf("%s── %s\n", isLast ? "└" : "├", tree->id);
 
-    struct ChildNode *curr = tree->children;
-    while(curr)
-    {
-        TreePrint(curr->child, depth + 1);
-        curr = curr->next;
+    // Create a new prefix for the next level (children indentation)
+    char newPrefix[256];
+    snprintf(newPrefix, sizeof(newPrefix), "%s%s", prefix, isLast ? "    " : "│   ");
+
+    // Count the number of children to identify the last one
+    int count = 0;
+    for (struct ChildNode *c = tree->children; c; c = c->next) count++;
+
+    // Recursively print all children
+    int i = 0;
+    for (struct ChildNode *curr = tree->children; curr; curr = curr->next) {
+        TreePrint(curr->child, newPrefix, ++i == count);
     }
 }
+
+
 
 
 
