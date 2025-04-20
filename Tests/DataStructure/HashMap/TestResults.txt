@@ -4,4 +4,16 @@ Remove test passed!
 Contains test passed!
 Edge cases test passed!
 
+-------------------------------------
+The current state of the HashMap is :
+-------------------------------------
+Key: key-4, Value: value-4
+Key: key-3, Value: value-3
+Key: key-2, Value: value-2
+Key: key-1, Value: value-1
+-------------------------------------
+
+
+print test passed!
+
 All tests passed successfully!

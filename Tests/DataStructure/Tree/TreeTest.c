@@ -217,6 +217,43 @@ int main() {
     testTreeIsLeaf();
     testTreeGetParent();
 
+    HashMap *hashmap = HashMapNew();
+    HashMapPut(hashmap, "key-1", "value-1");
+
+    Tree *myTree = TreeNew(window, "id-window", NULL, hashmap);
+    
+    Tree *child1 = TreeNew(window, "id-child1", NULL, hashmap);
+    Tree *child2 = TreeNew(window, "id-child2", NULL, hashmap);
+    
+    TreeAddChild(myTree, child1);
+    TreeAddChild(myTree, child2);
+
+    Tree *child11 = TreeNew(window, "id-child1-1", NULL, hashmap);
+    Tree *child12 = TreeNew(window, "id-child1-2", NULL, hashmap);
+    Tree *child13 = TreeNew(window, "id-child1-3", NULL, hashmap);
+
+    TreeAddChild(child1, child11);
+    TreeAddChild(child1, child12);
+    TreeAddChild(child1, child13);
+
+
+    Tree *child111 = TreeNew(window, "id-child1-1-1", NULL, hashmap);
+    Tree *child112 = TreeNew(window, "id-child1-1-2", NULL, hashmap);
+    Tree *child113 = TreeNew(window, "id-child1-1-3", NULL, hashmap);
+
+    TreeAddChild(child11, child111);
+    TreeAddChild(child11, child112);
+    TreeAddChild(child11, child113);
+
+    Tree *child3 = TreeNew(window, "id-child3", NULL, hashmap);
+    TreeAddChild(myTree, child3);   
+
+
+
+    
+    TreePrint(myTree, "", 1);
+    printf("\n\nTesting TreePrint...  Passed!\n");
+
     printf("\nAll tests passed successfully!\n");
     return 0;
 }

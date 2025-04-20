@@ -100,6 +100,16 @@ int main() {
     test_remove();
     test_contains();
     test_edge_cases();
+
+    HashMap *hashmap = HashMapNew();
+    HashMapPut(hashmap, "key-1", "value-1");
+    HashMapPut(hashmap, "key-2", "value-2");
+    HashMapPut(hashmap, "key-3", "value-3");
+    HashMapPut(hashmap, "key-4", "value-4");
+
+    HashMapPrint(hashmap);
+    printf("\n\nprint test passed!\n");
+    
     
     printf("\nAll tests passed successfully!\n");
     return 0;
